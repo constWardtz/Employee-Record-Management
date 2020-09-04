@@ -8,6 +8,7 @@ class Employee {
 		this.salary = salary;
 	}
 }
+
 class Display {
 	add(employee) {
 		return `
@@ -43,6 +44,8 @@ class Display {
 	}
 }
 
+/* form */
+
 formData.addEventListener(`submit`, (e) => {
 	e.preventDefault();
 	const fName = document.querySelector(`#fName`).value;
@@ -52,7 +55,7 @@ formData.addEventListener(`submit`, (e) => {
 	const employee = new Employee(fName, lName, salary);
 	const display = new Display(employee);
 
-	// validate and output if true
+	/*validate and output if true*/
 	if (!display.validate(employee)) {
 		display.show('error', null, "Can't Add Employee!");
 		display.clear();
@@ -65,14 +68,16 @@ formData.addEventListener(`submit`, (e) => {
 	}
 });
 
-// Sample Employee
+/*Sample Employee*/
 const dummEmployee = [
 	{
 		name: 'Juan Delacruz',
 		salary: '12,000'
 	}
 ];
+
 const [ { name, salary } ] = dummEmployee;
+
 const dummyEmployee = () => {
 	return `
 	<b>Employee Name:</b> <span style='color:green;'>${name}</span> <br />
@@ -83,7 +88,7 @@ const dummyEmployee = () => {
 const clearBtn = () => {
 	const resetBtn = `
 	<button id='reset-data' style="border:none; width:100%; background:red; color:aliceblue; cursor:pointer;  padding:8px; margin-top:10px;">Clear Dummy Data</button> <br />
-`;
+	`;
 	employeeData.innerHTML += `${dummyEmployee()} ${resetBtn}`;
 	const resetData = document.querySelector(`#reset-data`);
 
@@ -91,4 +96,5 @@ const clearBtn = () => {
 		employeeData.innerHTML = ``;
 	});
 };
+
 clearBtn();
