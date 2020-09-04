@@ -1,5 +1,7 @@
 const formData = document.querySelector(`#form-data`);
 const employeeData = document.querySelector(`#list-employee`);
+const dummyEmployeeData = document.querySelector(`#dummy-employee`);
+const deleteBtn = document.querySelector(`#delete-btn`);
 
 class Employee {
 	constructor(firstName, lastName, salary) {
@@ -14,7 +16,6 @@ class Display {
 		return `
 		<b>Employee Name:</b> <span style='color:green;'>${employee.firstName} ${employee.lastName}</span> <br />
 		<b>Employee Salary:</b> <span style='color:green;'>${employee.salary} </span> <br />
-		<button id='reset-data-two' style="border:none; width:100%; background:red; color:aliceblue; cursor:pointer;  padding:8px; margin-top:10px;">Clear</button> <br />
 		`;
 	}
 
@@ -44,6 +45,10 @@ class Display {
 	}
 }
 
+clearEmployee = () => {
+	employeeData.innerHTML = ``;
+};
+
 /* form */
 formData.addEventListener(`submit`, (e) => {
 	e.preventDefault();
@@ -64,6 +69,12 @@ formData.addEventListener(`submit`, (e) => {
 
 		employeeData.innerHTML += `${display.add(employee)}<hr /> <br /> `;
 		console.log(employee);
+		const deleteAllEmployee = () => {
+			deleteBtn.innerHTML = `
+				<button onclick="clearEmployee()" style="border:none; width:100%; background:red; color:aliceblue; cursor:pointer;  padding:8px; margin-top:10px;">Clear</button> <br />
+			`;
+		};
+		deleteAllEmployee();
 	}
 });
 
@@ -86,14 +97,11 @@ const dummyEmployee = () => {
 
 const clearBtn = () => {
 	const resetBtn = `
-	<button id='reset-data' style="border:none; width:100%; background:red; color:aliceblue; cursor:pointer;  padding:8px; margin-top:10px;">Clear Dummy Data</button> <br />
+	<button onclick="resetData()" style="border:none; width:100%; background:red; color:aliceblue; cursor:pointer;  padding:8px; margin-top:10px; margin-bottom:20px;">Clear Dummy Data</button> <br />
 	`;
-	employeeData.innerHTML += `${dummyEmployee()} ${resetBtn}`;
-	const resetData = document.querySelector(`#reset-data`);
-
-	resetData.addEventListener(`click`, () => {
-		employeeData.innerHTML = ``;
-	});
+	dummyEmployeeData.innerHTML += `${dummyEmployee()} ${resetBtn}`;
+	resetData = () => {
+		dummyEmployeeData.innerHTML = ``;
+	};
 };
-
 clearBtn();
