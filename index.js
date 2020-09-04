@@ -2,7 +2,9 @@ const formData = document.querySelector(`#form-data`);
 const employeeData = document.querySelector(`#list-employee`);
 const dummyEmployeeData = document.querySelector(`#dummy-employee`);
 const deleteBtn = document.querySelector(`#delete-btn`);
+const data = document.querySelector(`#data`);
 
+/* Employee */
 class Employee {
 	constructor(firstName, lastName, salary) {
 		this.firstName = firstName;
@@ -11,6 +13,7 @@ class Employee {
 	}
 }
 
+/* Display data */
 class Display {
 	add(employee) {
 		return `
@@ -45,8 +48,10 @@ class Display {
 	}
 }
 
+/* Run the clear button function */
 clearEmployee = () => {
 	employeeData.innerHTML = ``;
+	data.style.display = 'none';
 };
 
 /* form */
@@ -69,6 +74,11 @@ formData.addEventListener(`submit`, (e) => {
 
 		employeeData.innerHTML += `${display.add(employee)}<hr /> <br /> `;
 		console.log(employee);
+
+		/*  List of all Data */
+		data.style.display = 'grid';
+
+		/* Clear Button */
 		const deleteAllEmployee = () => {
 			deleteBtn.innerHTML = `
 				<button onclick="clearEmployee()" style="border:none; width:100%; background:red; color:aliceblue; cursor:pointer;  padding:8px; margin-top:10px;">Clear</button> <br />
@@ -88,6 +98,7 @@ const dummEmployee = [
 
 const [ { name, salary } ] = dummEmployee;
 
+/* Create a dummy data */
 const dummyEmployee = () => {
 	return `
 	<b>Employee Name:</b> <span style='color:green;'>${name}</span> <br />
@@ -95,6 +106,7 @@ const dummyEmployee = () => {
 	`;
 };
 
+/* Button for dummy data */
 const clearBtn = () => {
 	const resetBtn = `
 	<button onclick="resetData()" style="border:none; width:100%; background:red; color:aliceblue; cursor:pointer;  padding:8px; margin-top:10px; margin-bottom:20px;">Clear Dummy Data</button> <br />
