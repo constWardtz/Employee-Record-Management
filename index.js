@@ -2,7 +2,7 @@ const formData = document.querySelector(`#form-data`);
 const employeeData = document.querySelector(`#list-employee`);
 const dummyEmployeeData = document.querySelector(`#dummy-employee`);
 const deleteBtn = document.querySelector(`#delete-btn`);
-const data = document.querySelector(`#data`);
+const listContainer = document.querySelector(`#list-container`);
 
 /* Employee */
 class Employee {
@@ -51,7 +51,7 @@ class Display {
 /* Run the clear button function */
 clearEmployee = () => {
 	employeeData.innerHTML = ``;
-	data.style.display = 'none';
+	listContainer.style.display = 'none';
 };
 
 /* form */
@@ -75,8 +75,8 @@ formData.addEventListener(`submit`, (e) => {
 		employeeData.innerHTML += `${display.add(employee)}<hr /> <br /> `;
 		console.log(employee);
 
-		/*  List of all Data */
-		data.style.display = 'grid';
+		/*  Container list */
+		listContainer.style.display = 'grid';
 
 		/* Clear Button */
 		const deleteAllEmployee = () => {
