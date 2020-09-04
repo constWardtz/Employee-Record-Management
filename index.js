@@ -14,7 +14,7 @@ class Display {
 		return `
 		<b>Employee Name:</b> <span style='color:green;'>${employee.firstName} ${employee.lastName}</span> <br />
 		<b>Employee Salary:</b> <span style='color:green;'>${employee.salary} </span> <br />
-		<button id='reset-data-two' style="border:none; width:100%; background:red; color:aliceblue; cursor:pointer;  padding:8px; margin-top:10px;">Clear Dummy Data</button> <br />
+		<button id='reset-data-two' style="border:none; width:100%; background:red; color:aliceblue; cursor:pointer;  padding:8px; margin-top:10px;">Clear</button> <br />
 		`;
 	}
 
