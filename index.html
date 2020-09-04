@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: sans-serif;
+            box-sizing: border-box;
+            align-items: center;
+        }
+        .form-data{
+            display: grid;
+        }
+        .form-data input,button{
+            padding:5px;
+            margin:3px
+        }
+        .employee-data{
+        }
+     
+
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Add Employee</legend>
+        <form id="form-data"  class="form-data">
+            <input type="text" placeholder="Enter first name" id="fName" autofocus/> <br />
+            <input type="text" placeholder="Enter last name" id="lName" /> <br />
+            <input type="text" placeholder="Enter salary " id="salary" /> <br />
+            <button type="submit" style="border:none; width:100%; background:green; color:aliceblue; cursor:pointer; padding:8px;">Add  Employee</button>
+        </form>
+    </fieldset>
+    <br /><br />
+     <fieldset id="employee-data" class="employee-data">
+        <legend>Employee's</legend>
+        <h2>Your Employee:</h2>
+         <div id="list-employee">
+        </div>
+    </fieldset>
+    <script src="./index.js"></script>
+</body>
+</html>
