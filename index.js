@@ -10,11 +10,11 @@ class Employee {
 }
 class Display {
 	add(employee) {
-		return `<b>Employee Name:</b> <span style='color:green;'>${employee.firstName} ${employee.lastName}</span> <br />
-				<b>Employee Salary:</b> <span style='color:green;'>${employee.salary} </span> <br />
-				<button id='reset-data-two' style="border:none; width:100%; background:red; color:aliceblue; cursor:pointer;  padding:8px; margin-top:10px;">Clear Dummy Data</button> <br />
-
-				`;
+		return `
+		<b>Employee Name:</b> <span style='color:green;'>${employee.firstName} ${employee.lastName}</span> <br />
+		<b>Employee Salary:</b> <span style='color:green;'>${employee.salary} </span> <br />
+		<button id='reset-data-two' style="border:none; width:100%; background:red; color:aliceblue; cursor:pointer;  padding:8px; margin-top:10px;">Clear Dummy Data</button> <br />
+		`;
 	}
 
 	clear() {
@@ -74,9 +74,10 @@ const dummEmployee = [
 ];
 const [ { name, salary } ] = dummEmployee;
 const dummyEmployee = () => {
-	return `<b>Employee Name:</b> <span style='color:green;'>${name}</span> <br />
-            <b>Employee Salary:</b> <span style='color:green;'>${salary} </span>
-				`;
+	return `
+	<b>Employee Name:</b> <span style='color:green;'>${name}</span> <br />
+    <b>Employee Salary:</b> <span style='color:green;'>${salary} </span>
+	`;
 };
 
 const clearBtn = () => {
