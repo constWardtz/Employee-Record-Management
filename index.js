@@ -52,7 +52,7 @@ formData.addEventListener(`submit`, (e) => {
 	const employee = new Employee(fName, lName, salary);
 	const display = new Display(employee);
 
-	// Validation and output
+	// validate and output if true
 	if (!display.validate(employee)) {
 		display.show('error', null, "Can't Add Employee!");
 		display.clear();
