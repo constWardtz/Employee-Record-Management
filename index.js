@@ -81,7 +81,7 @@ formData.addEventListener(`submit`, (e) => {
 		/* Clear Button */
 		const deleteAllEmployee = () => {
 			deleteBtn.innerHTML = `
-				<button onclick="clearEmployee()" style="border:none; width:100%; background:red; color:aliceblue; cursor:pointer;  padding:8px; margin-top:10px;">Clear</button> <br />
+				<button onclick="clearEmployee()" style="position:relative;top:-20px;border:none; width:100%; background:red; color:aliceblue; cursor:pointer;  padding:8px; margin-top:10px;">Clear</button> <br />
 			`;
 		};
 		deleteAllEmployee();
@@ -109,7 +109,7 @@ const dummyEmployee = () => {
 /* Button for dummy data */
 const clearBtn = () => {
 	const resetBtn = `
-	<button onclick="resetData()" style="border:none; width:100%; background:red; color:aliceblue; cursor:pointer;  padding:8px; margin-top:10px; margin-bottom:20px;">Clear Dummy Data</button> <br />
+	<button onclick="resetData()" style="border:none; width:100%; background:red; color:aliceblue; cursor:pointer;  padding:8px; margin-top:10px; margin-bottom:20px;">Clear Sample Data</button> <br />
 	`;
 	dummyEmployeeData.innerHTML += `${dummyEmployee()} ${resetBtn}`;
 	resetData = () => {
