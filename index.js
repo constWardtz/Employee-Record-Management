@@ -45,7 +45,6 @@ class Display {
 }
 
 /* form */
-
 formData.addEventListener(`submit`, (e) => {
 	e.preventDefault();
 	const fName = document.querySelector(`#fName`).value;
